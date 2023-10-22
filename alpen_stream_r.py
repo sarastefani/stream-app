@@ -94,6 +94,7 @@ embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
 
 # initialize pinecone
 st.write(pinecone.list_indexes())
+st.write(pinecone.describe_index('example-index'))
 
 index_name = "alpen2"
 #index_name = "chatbot"
