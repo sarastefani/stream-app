@@ -58,18 +58,18 @@ def get_model() -> ConversationalRetrievalChain:
     
     # Construct a ConversationalRetrievalChain with a streaming llm for combine docs
     # and a separate, non-streaming llm for question generation
-    llm = ChatOpenAI(temperature=0.7)
+    llm = ChatOpenAI(temperature=0.9)
     #llm = ChatOpenAI()
     handler = StreamlitCallbackHandlerOEHV()
     st.session_state.handler = handler
 
-    streaming_llm = ChatOpenAI(streaming=True, callbacks=[handler], temperature=0.7, model_name=model_name)
+    streaming_llm = ChatOpenAI(streaming=True, callbacks=[handler], temperature=0.9, model_name=model_name)
     #streaming_llm = ChatOpenAI(streaming=True, callbacks=[handler], model_name=model_name)
 
     question_generator = LLMChain(llm=llm, prompt=CONDENSE_QUESTION_PROMPT)
 
-    prompt_template = """You are an AI that only answers questions with the context of Sportresort Alpenblick. You first check the Question and answer in the same language of the Question.
-    Do not answer if you are not 100% sure. Do not write anything that is not related to the Sportressort Alpenblick. Give a structured and accurate answer. Only if a question is about booking a room, answer that this information is not available as you are a AI system and they should either call the hotel (+43 6542 5433) or use the Inquiry form on the website. For requests in English provide this link: https://www.alpenblick.at/en/inquire, for German requests show this link: https://www.alpenblick.at/de/anfragen. Provide this links only for booking inquieries. The hotels address is: Alte Landesstr. 6, 5700 Zell am See. 
+    prompt_template = """You are an AI that only answers questions related to Sportresort Alpenblick. You first check the Question and answer in the same language of the Question.
+    Do not answer if you are not 100% sure. Do not write anything as answer that is not related to the Sportressort Alpenblick. Give a structured and accurate answer. Only if a question is about booking a room, answer that this information is not available as you are a AI system and they should either call the hotel (+43 6542 5433) or use the Inquiry form on the website. For requests in English provide this link: https://www.alpenblick.at/en/inquire, for German requests show this link: https://www.alpenblick.at/de/anfragen. Provide this links only for booking inquieries. The hotels address is: Alte Landesstr. 6, 5700 Zell am See. 
 Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. Answer in the language of the user prompt.
 
 {context}
