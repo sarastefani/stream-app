@@ -22,10 +22,11 @@ from langchain.chains.question_answering import load_qa_chain
 model_name = "gpt-4"  # 'gpt-3'
 
 openai_api_key = st.secrets['OPENAI_API_KEY']
-#pinecone_api_key = 'b8aadd4c-6fe0-4de9-8f1e-28794846b692'  # find at app.pinecone.io
+pinecone_api_key = 'b8aadd4c-6fe0-4de9-8f1e-28794846b692'  # find at app.pinecone.io
 
-pinecone_api_key = 'f0b3d3aa-2924-4af0-a2c4-934c6daed97b'
-pinecone_environment = 'gcp-starter'  # next to api key in console
+#pinecone_api_key = 'f0b3d3aa-2924-4af0-a2c4-934c6daed97b'
+#pinecone_environment = 'gcp-starter'  # next to api key in console
+pinecone_environment = 'northamerica-northeast1-gcp'
 
 ## store messages
 if 'bot' not in st.session_state:
