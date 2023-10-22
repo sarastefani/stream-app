@@ -101,13 +101,18 @@ embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
 #st.write(pinecone.list_indexes())
 #st.write(pinecone.describe_index('alpen2'))
 
-index_name = "alpen2"
+#index_name = "alpen2"
 #index_name = "chatbot"
 
 pinecone.init(
     api_key=pinecone_api_key,
     environment=pinecone_environment
 )
+
+
+pinecone.create_index("sara-index", dimension=128, metric="euclidean", pods=4, pod_type="s1.x1")
+
+index_name = "sara-index"
 
 ds = Pinecone.from_existing_index(index_name, embeddings)
 conversation_chain = get_model()
