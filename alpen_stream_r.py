@@ -93,8 +93,8 @@ def clear_input():
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
 
 # initialize pinecone
-#index_name = "alpen2"
-index_name = "chatbot"
+index_name = "alpen"
+#index_name = "chatbot"
 
 pinecone.init(
     api_key=pinecone_api_key,
