@@ -110,7 +110,7 @@ pinecone.init(
 )
 
 
-pinecone.create_index("sara-index", dimension=256, metric="euclidean", pods=1, pod_type="p1.x1")
+pinecone.create_index("sara-index", dimension=256, metric="cosine", replicas = 1, shards = 1, pods=1, pod_type="p1.x1")
 
 index_name = "sara-index"
 
