@@ -19,8 +19,8 @@ from langchain.chains.conversational_retrieval.prompts import CONDENSE_QUESTION_
 from langchain.chains.question_answering import load_qa_chain
 
 # constants
-model_name = "gpt-4"  # 'gpt-3'
-#model_name = "gpt-3.5-turbo"
+#model_name = "gpt-4"  # 'gpt-3'
+model_name = "gpt-3.5-turbo"
 #model_name = "gpt-4-0613"
 
 openai_api_key = st.secrets['OPENAI_API_KEY']
