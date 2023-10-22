@@ -19,8 +19,8 @@ from langchain.chains.conversational_retrieval.prompts import CONDENSE_QUESTION_
 from langchain.chains.question_answering import load_qa_chain
 
 # constants
-#model_name = "gpt-4"  # 'gpt-3'
-model_name = "gpt-3.5-turbo"
+model_name = "gpt-4"  # 'gpt-3'
+#model_name = "gpt-3.5-turbo"
 #model_name = "gpt-4-0613"
 
 openai_api_key = st.secrets['OPENAI_API_KEY']
@@ -58,13 +58,13 @@ def get_model() -> ConversationalRetrievalChain:
     
     # Construct a ConversationalRetrievalChain with a streaming llm for combine docs
     # and a separate, non-streaming llm for question generation
-    #llm = ChatOpenAI(temperature=0)
-    llm = ChatOpenAI()
+    llm = ChatOpenAI(temperature=0)
+    #llm = ChatOpenAI()
     handler = StreamlitCallbackHandlerOEHV()
     st.session_state.handler = handler
 
-    #streaming_llm = ChatOpenAI(streaming=True, callbacks=[handler], temperature=0, model_name=model_name)
-    streaming_llm = ChatOpenAI(streaming=True, callbacks=[handler], model_name=model_name)
+    streaming_llm = ChatOpenAI(streaming=True, callbacks=[handler], temperature=0, model_name=model_name)
+    #streaming_llm = ChatOpenAI(streaming=True, callbacks=[handler], model_name=model_name)
 
     question_generator = LLMChain(llm=llm, prompt=CONDENSE_QUESTION_PROMPT)
 
