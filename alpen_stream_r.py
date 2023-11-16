@@ -121,7 +121,7 @@ handler = st.session_state.handler
 # display website
 ## display header
 
-#st.image("https://storage.googleapis.com/my_publications/segl.jpg")
+st.image("https://storage.googleapis.com/my_publications/segl.jpg")
 
 ## display chat history
 history = st.container()
