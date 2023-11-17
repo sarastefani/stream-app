@@ -18,7 +18,8 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.chains.conversational_retrieval.prompts import CONDENSE_QUESTION_PROMPT
 from langchain.chains.question_answering import load_qa_chain
 
-from langchain.llms import Langchain
+import langdetect
+
 
 
 # constants
@@ -125,14 +126,13 @@ def detect_lang(txt):
     - ValueError:
         Raises an error if the input text is empty or None.
     """
-    llm_detect = Langchain()
 
     # Checking if the input text is empty or None
     if not txt:
         raise ValueError("Input text cannot be empty or None.")
  
     # Using Langchain to detect the language of the text
-    detected_lang = llm_detect.detect(txt)
+    detected_lang = langdetect.detect(text)
  
     return detected_lang
 
