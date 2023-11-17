@@ -145,11 +145,14 @@ with history:
 footerSection = st.container()
 
 user_question = footerSection.text_input(
-    "Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!", key='text',
+    "Hallo👋, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!", key='text',
     on_change=clear_input)
 
 
+
 # SB 
+
+st.write('')
 st.write(st.session_state.user)
 
 #SB
@@ -160,9 +163,10 @@ if st.session_state.user:
 if user_question:
 # SB
 #    st.session_state.user.append(user_question)
+#    response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history} )
 # SB
     current_user_question.write(user_question) 
-    response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history} )
+    response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history, 'lang': 'English'} )
 
     st.session_state.chat_history.append((user_question, response))
     st.session_state.bot.append(handler.tokens_stream)
