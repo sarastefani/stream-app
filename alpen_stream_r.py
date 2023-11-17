@@ -125,14 +125,14 @@ def detect_lang(txt):
     - ValueError:
         Raises an error if the input text is empty or None.
     """
-    llm = Langchain()
+    llm_detect = Langchain()
 
     # Checking if the input text is empty or None
     if not txt:
         raise ValueError("Input text cannot be empty or None.")
  
     # Using Langchain to detect the language of the text
-    detected_lang = llm.detect(txt)
+    detected_lang = llm_detect.detect(txt)
  
     return detected_lang
 
