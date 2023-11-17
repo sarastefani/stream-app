@@ -182,7 +182,7 @@ footerSection = st.container()
 
     
 user_question = footerSection.text_input(
-    "Hallo👋, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!", key='text',
+    "\nHallo👋, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!\n", key='text',
     on_change=clear_input)
 
 
@@ -204,7 +204,7 @@ if user_question:
 # SB
     current_user_question.write(user_question)
 
-    st.write(user_question)
+
 
     lang = detect_lang(user_question)
 
