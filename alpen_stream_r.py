@@ -134,10 +134,10 @@ def detect_lang(txt):
  
     # Using Langchain to detect the language of the text
     try:
-	detected_lang = langdetect.detect(text)
+	detected_lang = langdetect.detect(txt)
 	return detected_lang
     except:
-	return 'English'
+	return None
 
 # initialize llm
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
