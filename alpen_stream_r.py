@@ -221,7 +221,7 @@ if user_question:
     handler.tokens_stream = ''
 
     st.markdown(
-        "To speak with one of our employees, please call us at 0043 6542 5433 or write us on WhatsApp [click here](https://api.whatsapp.com/send/?phone=4367764828204&text=Los+gehts&type=phone_number&app_absent=0) \n"
+        "\n\nTo speak with one of our employees, please call us at 0043 6542 5433 or write us on WhatsApp [click here](https://api.whatsapp.com/send/?phone=4367764828204&text=Los+gehts&type=phone_number&app_absent=0) \n"
         "Rate our Chatbot and help us to improve it: "
         "[click here](https://forms.gle/WKJqdjTicZkAiJre8)"
     )
