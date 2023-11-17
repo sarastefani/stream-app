@@ -133,11 +133,9 @@ def detect_lang(txt):
 
  
     # Using Langchain to detect the language of the text
-    try:
-	detected_lang = langdetect.detect(txt)
-	return detected_lang
-    except:
-	return None
+    detected_lang = langdetect.detect(txt)
+    return detected_lang
+
 
 # initialize llm
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
