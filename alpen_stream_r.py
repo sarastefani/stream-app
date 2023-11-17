@@ -142,6 +142,12 @@ user_question = footerSection.text_input(
     "Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!", key='text',
     on_change=clear_input)
 
+
+# SB 
+st.write(st.session_state.user)
+
+#SB
+
 if st.session_state.user:
     user_question = st.session_state.user[-1]
 
