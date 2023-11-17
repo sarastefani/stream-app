@@ -79,7 +79,7 @@ def get_model() -> ConversationalRetrievalChain:
     Helpful Answer:"""
 
     #SB
-    st.write(context, question)
+    st.write(prompt_template)
 
     # SB
 
