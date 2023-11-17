@@ -76,6 +76,7 @@ def get_model() -> ConversationalRetrievalChain:
     {context}
 
     Question: {question}
+    Language:  {lang}
     Helpful Answer:"""
 
     #SB
@@ -83,7 +84,7 @@ def get_model() -> ConversationalRetrievalChain:
 
     # SB
 
-    qa_prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
+    qa_prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question", "lang"])
 
     doc_chain = load_qa_chain(streaming_llm, chain_type="stuff", prompt=qa_prompt)
 
