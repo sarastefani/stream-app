@@ -18,6 +18,9 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.chains.conversational_retrieval.prompts import CONDENSE_QUESTION_PROMPT
 from langchain.chains.question_answering import load_qa_chain
 
+from langchain.llms import Langchain
+
+
 # constants
 model_name = "gpt-4"  # 'gpt-3'
 #model_name = "gpt-3.5-turbo"
@@ -102,6 +105,37 @@ def clear_input():
     st.session_state.text = ''
 
 
+
+	# Initializing the Langchain object
+
+ 
+def detect_lang(txt):
+    """
+    Detect the language of a given text using Langchain.
+ 
+    Parameters:
+    - txt: str
+        The text for which the language needs to be detected.
+ 
+    Returns:
+    - str:
+        The detected language of the text.
+ 
+    Raises:
+    - ValueError:
+        Raises an error if the input text is empty or None.
+    """
+     llm = Langchain()
+
+    # Checking if the input text is empty or None
+    if not txt:
+        raise ValueError("Input text cannot be empty or None.")
+ 
+    # Using Langchain to detect the language of the text
+    detected_lang = llm.detect(txt)
+ 
+    return detected_lang
+
 # initialize llm
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
 
@@ -145,8 +179,6 @@ with history:
 
 footerSection = st.container()
 
-with st.chat_message("user"):
-    st.write("Hello 👋")
     
 user_question = footerSection.text_input(
     "Hallo👋, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!", key='text',
@@ -169,8 +201,14 @@ if user_question:
 #    st.session_state.user.append(user_question)
 #    response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history} )
 # SB
-    current_user_question.write(user_question) 
-    response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history, 'lang': 'English'} )
+    current_user_question.write(user_question)
+
+    lang = detect_lang(user_question)
+
+    st.write('Language' , lang)
+
+    
+    response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history, 'lang': lang} )
 
     st.session_state.chat_history.append((user_question, response))
     st.session_state.bot.append(handler.tokens_stream)
