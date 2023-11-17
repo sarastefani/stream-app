@@ -84,10 +84,6 @@ def get_model() -> ConversationalRetrievalChain:
     Language:  {lang}
     Helpful Answer:"""
 
-    #SB
-    st.write(prompt_template)
-
-    # SB
 
     qa_prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question", "lang"])
 
