@@ -130,11 +130,14 @@ def detect_lang(txt):
     # Checking if the input text is empty or None
     if not txt:
         raise ValueError("Input text cannot be empty or None.")
+
  
     # Using Langchain to detect the language of the text
-    detected_lang = langdetect.detect(text)
- 
-    return detected_lang
+    try:
+	detected_lang = langdetect.detect(text)
+	return detected_lang
+    except:
+	return 'English'
 
 # initialize llm
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
@@ -202,6 +205,8 @@ if user_question:
 #    response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history} )
 # SB
     current_user_question.write(user_question)
+
+    st.write(user_question)
 
     lang = detect_lang(user_question)
 
