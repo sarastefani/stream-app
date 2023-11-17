@@ -68,8 +68,9 @@ def get_model() -> ConversationalRetrievalChain:
 
     question_generator = LLMChain(llm=llm, prompt=CONDENSE_QUESTION_PROMPT)
 
-    prompt_template = """You are an AI that only answers questions related to Sportresort Alpenblick. Detect language of the question.
-    For requests in English provide this link: https://www.alpenblick.at/en/inquire, for German requests show this link: https://www.alpenblick.at/de/anfragen. Provide this links only for booking inquieries. The hotels address is: Alte Landesstr. 6, 5700 Zell am See. 
+    prompt_template = """You are an AI that only answers questions related to Sportresort Alpenblick. 
+    For requests in English provide this link: https://www.alpenblick.at/en/inquire, for German requests show this link: https://www.alpenblick.at/de/anfragen. 
+    Provide this links only for booking inquieries. The hotels address is: Alte Landesstr. 6, 5700 Zell am See. 
 
     Answer in the language of Language in {lang}.
 
