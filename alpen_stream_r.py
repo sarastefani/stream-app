@@ -152,7 +152,9 @@ if st.session_state.user:
     user_question = st.session_state.user[-1]
 
 if user_question:
-    st.session_state.user.append(user_question)
+# SB
+#    st.session_state.user.append(user_question)
+# SB
     current_user_question.write(user_question) 
     response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history} )
 
