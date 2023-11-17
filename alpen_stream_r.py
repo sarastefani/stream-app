@@ -177,7 +177,7 @@ with history:
 footerSection = st.container()
 
 
-st.text_input(r"$\textsf{\Large Enter text here}$", key = 'text1')
+#st.text_input(r"$\textsf{\Large Enter text here}$", key = 'text1')
 
     
 #user_question = footerSection.text_input(
@@ -185,7 +185,7 @@ st.text_input(r"$\textsf{\Large Enter text here}$", key = 'text1')
 #    on_change=clear_input)
 
 user_question = footerSection.text_input(
-    r"$\textsf{\Large Hallo, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!}$", key='text',
+    r"$\textsf{\Large Hallo, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language! :raising_hand:}$", key='text',
     on_change=clear_input)
 
 
