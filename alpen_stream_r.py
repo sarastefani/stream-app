@@ -178,7 +178,7 @@ footerSection = st.container()
 
     
 user_question = footerSection.text_input(
-    "\nHallo👋, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!\n", key='text',
+    "\n :raising_hand: Hallo👋, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!\n", key='text',
     on_change=clear_input)
 
 
