@@ -177,7 +177,7 @@ with history:
 footerSection = st.container()
 
 
-st.text_input(r"$\textsf{\Large Enter text here}$", key = 'text')
+st.text_input(r"$\textsf{\Large Enter text here}$", key = 'text1')
 
     
 #user_question = footerSection.text_input(
