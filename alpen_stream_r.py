@@ -185,7 +185,7 @@ footerSection = st.container()
 #    on_change=clear_input)
 
 user_question = footerSection.text_input(
-    '\n'+ ':raising_hand:' + r"$\textsf{\Normal Hallo, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!}$", key='text',
+    '\n'+ ':raising_hand:' + r"$\textsf{\ Hallo, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!}$", key='text',
     on_change=clear_input)
 
 
