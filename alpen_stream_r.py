@@ -145,6 +145,9 @@ with history:
 
 footerSection = st.container()
 
+with st.chat_message("user"):
+    st.write("Hello 👋")
+    
 user_question = footerSection.text_input(
     "Hallo👋, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!", key='text',
     on_change=clear_input)
