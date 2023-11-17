@@ -71,7 +71,7 @@ def get_model() -> ConversationalRetrievalChain:
     prompt_template = """You are an AI that only answers questions related to Sportresort Alpenblick. Detect language of the question.
     For requests in English provide this link: https://www.alpenblick.at/en/inquire, for German requests show this link: https://www.alpenblick.at/de/anfragen. Provide this links only for booking inquieries. The hotels address is: Alte Landesstr. 6, 5700 Zell am See. 
 
-    Answer in the language of the user prompt.
+    Answer in the language of Language in {lang}.
 
     {context}
 
