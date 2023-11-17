@@ -185,14 +185,14 @@ footerSection = st.container()
 #    on_change=clear_input)
 
 user_question = footerSection.text_input(
-    ':raising_hand:' + r"$\textsf{\Large Hallo, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!}$", key='text',
+    '\n'+ ':raising_hand:' + r"$\textsf{\Large Hallo, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!}$", key='text',
     on_change=clear_input)
 
 
 # SB 
 
-st.write('')
-st.write(st.session_state.user)
+#st.write('')
+#st.write(st.session_state.user)
 
 #SB
 
