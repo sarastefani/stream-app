@@ -78,6 +78,11 @@ def get_model() -> ConversationalRetrievalChain:
     Question: {question}
     Helpful Answer:"""
 
+    #SB
+    st.write(context, question)
+
+    # SB
+
     qa_prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
 
     doc_chain = load_qa_chain(streaming_llm, chain_type="stuff", prompt=qa_prompt)
