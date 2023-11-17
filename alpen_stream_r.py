@@ -176,11 +176,17 @@ with history:
 
 footerSection = st.container()
 
-    
-user_question = footerSection.text_input(
-    "\n :raising_hand: Hallo, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!\n", key='text',
-    on_change=clear_input)
 
+st.text_input(r"$\textsf{\Large Enter text here}$")
+
+    
+#user_question = footerSection.text_input(
+#    "\n :raising_hand: Hallo, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!\n", key='text',
+#    on_change=clear_input)
+
+user_question = footerSection.text_input(
+    r"$\textsf{\Large :raising_hand: Hallo, Wie können wir Ihnen weiterhelfen? Sie können ganze Sätze schreiben... Ask us in any language!}$", key='text',
+    on_change=clear_input)
 
 
 # SB 
