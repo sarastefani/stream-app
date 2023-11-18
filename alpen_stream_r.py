@@ -192,7 +192,7 @@ user_question = footerSection.text_input(
 # SB 
 
 #st.write('')
-st.write(st.session_state.user)
+#st.write(st.session_state.user)
 
 #SB
 
@@ -210,7 +210,7 @@ if user_question:
 
     lang = detect_lang(user_question)
 
-    st.write('Language' , lang)
+    #st.write('Language' , lang)
 
     
     response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history, 'lang': lang} )
