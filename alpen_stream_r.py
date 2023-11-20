@@ -189,21 +189,21 @@ user_question = footerSection.text_input(
     on_change=clear_input)
 
 
-# SB 
+# SS
 
 #st.write('')
 #st.write(st.session_state.user)
 
-#SB
+#SS
 
 if st.session_state.user:
     user_question = st.session_state.user[-1]
 
 if user_question:
-# SB
+# SS
 #    st.session_state.user.append(user_question)
 #    response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history} )
-# SB
+# SS
     current_user_question.write(user_question)
 
 
