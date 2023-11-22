@@ -23,8 +23,7 @@ import langdetect
 
 
 # constants
-model_name = "gpt-4-1106-preview"
-#model_name = "gpt-4"  # 'gpt-3'
+model_name = "gpt-4"  # 'gpt-3'
 #model_name = "gpt-3.5-turbo"
 #model_name = "gpt-4-0613"
 
