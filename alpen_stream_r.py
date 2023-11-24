@@ -19,7 +19,7 @@ from langchain.chains.conversational_retrieval.prompts import CONDENSE_QUESTION_
 from langchain.chains.question_answering import load_qa_chain
 
 import langdetect
-
+import openai
 
 
 # constants
