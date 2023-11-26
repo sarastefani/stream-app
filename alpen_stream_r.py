@@ -75,7 +75,9 @@ def get_model() -> ConversationalRetrievalChain:
 
     prompt_template = """You are an AI that only answers questions related to Sportresort Alpenblick. 
     For requests in English provide this link: https://www.alpenblick.at/en/inquire, for German requests show this link: https://www.alpenblick.at/de/anfragen. 
-    Provide this links only for booking inquieries. The hotels address is: Alte Landesstr. 6, 5700 Zell am See. 
+    Provide this links only for booking inquieries. The hotels address is: Alte Landesstr. 6, 5700 Zell am See.
+
+    For weather data, get weather from Google.
 
     Answer in the language of Language in {lang}.
 
