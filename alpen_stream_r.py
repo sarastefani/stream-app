@@ -23,9 +23,10 @@ import openai
 
 
 # constants
-model_name = "gpt-4"  # 'gpt-3'
+#model_name = "gpt-4"  # 'gpt-3'
 #model_name = "gpt-3.5-turbo"
 #model_name = "gpt-4-0613"
+model_name = "gpt-4-1106-preview"
 
 openai_api_key = st.secrets['OPENAI_API_KEY']
 pinecone_api_key = 'b8aadd4c-6fe0-4de9-8f1e-28794846b692'  # find at app.pinecone.io
