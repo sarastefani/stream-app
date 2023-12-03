@@ -232,7 +232,10 @@ if user_question:
     #st.write('Language' , lang)
 
     
-    response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history, 'lang': lang} )
+    try:
+	response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history, 'lang': lang} )
+    except:
+	st.write('converstaion error!!')
 
     st.session_state.chat_history.append((user_question, response))
     st.session_state.bot.append(handler.tokens_stream)
