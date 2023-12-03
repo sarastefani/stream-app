@@ -233,13 +233,14 @@ if user_question:
 
     try:
 	    response = conversation_chain.run( {'question':user_question, 'chat_history':st.session_state.chat_history, 'lang': lang} )
+	    st.session_state.chat_history.append((user_question, response))
+    	    st.session_state.bot.append(handler.tokens_stream)
+    
+    	    handler.tokens_stream = ''
     except:
 	    st.write('converstaion error!!')
 
-    st.session_state.chat_history.append((user_question, response))
-    st.session_state.bot.append(handler.tokens_stream)
-    
-    handler.tokens_stream = ''
+
 
     st.markdown(
         "\n\nTo speak with one of our employees, please call us at 0043 6542 5433 or write us on WhatsApp [click here](https://api.whatsapp.com/send/?phone=4367764828204&text=Los+gehts&type=phone_number&app_absent=0) \n"
