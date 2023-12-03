@@ -25,7 +25,7 @@ Jinja2                 == 3.1.2
 jsonpatch              == 1.32
 jsonpointer            == 2.1
 jsonschema             == 4.17.3
-langchain              == 0.0.196
+langchain              
 langchainplus-sdk      == 0.0.8
 loguru                 == 0.7.0
 markdown-it-py         == 2.2.0
